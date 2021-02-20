@@ -8,7 +8,7 @@ const PlaceList = ({ places }) => {
   return (
     <div>
       {places.map((item) => (
-        <PlaceItem place={item} key={item.name} />
+        <PlaceItem place={item} key={item.id} />
       ))}
     </div>
   )

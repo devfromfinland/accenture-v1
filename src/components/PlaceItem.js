@@ -2,15 +2,22 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+const checkStatus = (openingHours) => {
+  // TODO: Check opening status
+
+  return 'Open'
+}
+
 const PlaceItem = ({ place }) => {
   // TODO: Get status based on current time and place's open time
-  const status = 'Currently Open'
+  const lang = 'en'
+  const { street_address, postal_code, locality } = place.location?.address
 
   return (
     <Wrapper>
-      <div>{place.name}</div>
-      <div>{place.address}</div>
-      <div>{status}</div>
+      <Name>{place.name[lang]}</Name>
+      <Address>{`${street_address}, ${postal_code} ${locality}`}</Address>
+      <div>{checkStatus(place.openingHours)}</div>
     </Wrapper>
   )
 }
@@ -18,7 +25,15 @@ const PlaceItem = ({ place }) => {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
+`
+
+const Name = styled.div`
+  flex: 1;
+`
+
+const Address = styled.div`
+  flex: 1;
 `
 
 PlaceItem.propTypes = {
