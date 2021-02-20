@@ -7,6 +7,8 @@ const PlaceList = ({ places }) => {
 
   return (
     <div>
+      {/* TODO: Add headers */}
+
       {places.map((item) => (
         <PlaceItem place={item} key={item.id} />
       ))}

@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PlacesList from './components/PlaceList'
+import Pagination from './components/Pagination'
+import { AppContext } from './lib/context'
 
 // TODO: add state
 
 function App() {
-  return <PlacesList places={places} />
+  const [context, setContext] = useState({
+    itemsPerPage: 10,
+    page: 1,
+  })
+
+  return (
+    <AppContext.Provider value={{ context, setContext }}>
+      <div>
+        <Pagination />
+        <PlacesList places={places} />
+      </div>
+    </AppContext.Provider>
+  )
 }
 
 const places = [
