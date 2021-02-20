@@ -1,7 +1,14 @@
 import React from 'react'
+import PlacesList from './components/PlaceList'
+
+// TODO: add state
 
 function App() {
-  return <div>Hello world!</div>
+  return (
+    <PlacesList
+      places={[{ name: 'Viet', address: 'Mechelininkatu 3A, Helsinki' }]}
+    />
+  )
 }
 
 export default App
