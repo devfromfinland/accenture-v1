@@ -3,7 +3,7 @@ import { useAppContext } from '../lib/context'
 
 const Pagination = () => {
   const { context, setContext } = useAppContext()
-  const { page, itemsPerPage } = context
+  const { page } = context
 
   const handlePrev = (e) => {
     e.preventDefault()
@@ -12,7 +12,9 @@ const Pagination = () => {
       ...context,
       page: page - 1,
     })
-    window.location.href = `/?page=${page - 1}&itemsPerPage=${itemsPerPage}`
+
+    // TODO: Add React Router for proper navigation
+    // window.location.href = `/?page=${page - 1}&itemsPerPage=${itemsPerPage}`
   }
   const handleNext = (e) => {
     e.preventDefault()
@@ -21,7 +23,9 @@ const Pagination = () => {
       ...context,
       page: page + 1,
     })
-    window.location.href = `/?page=${page + 1}&itemsPerPage=${itemsPerPage}`
+
+    // TODO: Add React Router for proper navigation
+    // window.location.href = `/?page=${page + 1}&itemsPerPage=${itemsPerPage}`
   }
   return (
     <div style={{ marginBottom: '10px' }}>

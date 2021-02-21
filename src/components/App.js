@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import PlacesList from './components/PlaceList'
-import Pagination from './components/Pagination'
-import { AppContext } from './lib/context'
+import PlacesList from './PlaceList'
+import Pagination from './Pagination'
+import { AppContext } from '../lib/context'
 
 // TODO: add state
 
